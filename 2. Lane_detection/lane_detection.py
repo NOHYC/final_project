@@ -17,7 +17,7 @@ from local_utils.config_utils import parse_config_utils
 from local_utils.log_util import init_logger
 
 prevTime = 0
-weights_path= "./weight2/tusimple_lanenet.ckpt"
+weights_path= "./weight/tusimple_lanenet.ckpt"
 CFG = parse_config_utils.lanenet_cfg
 LOG = init_logger.get_logger(log_file_name_prefix='lanenet_test')
 

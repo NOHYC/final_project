@@ -28,7 +28,7 @@
 
 - 소형화된 LiDAR센서와 고화질의 카메라 모듈을 통해 프로토 타입의 자율주행차를 제작하여 현업에서의 활용 가능성을 기대해보고 이를 바탕으로 무인 배송차, 방범용 로봇 등 무인화 가능한 전반적인 산업에 응용할 수 있다. 또한 최근 이슈화 되고 있는 어린이 보호구역에서의 사고 예방 등 산업을 떠난 일상의 안전에도 기여할 것으로 예상된다.
 
-### 프로젝트 진행 상황
+### 프로젝트 결과
 
 1. YOLO v3 
 
@@ -79,6 +79,50 @@
 
 
 블랙 박스 영상을 활용하여 YOLO v3와 LANENET을 적용
+
+
+
+
+
+
+
+### **프로젝트 실행방법**
+
+**필요한 것**
+
+파이썬 3.6
+
+tensorflow ==1.12 tensorflow-gpu == 1.12
+
+(cuda 9.0 cuDNN 7.2)
+
+numpy
+tqdm
+glog
+easydict
+tensorflow_gpu
+matplotlib
+opencv4
+scikit_learn
+loguru
+
+
+
+1. lanenet weight 파일 압축풀기
+
+   4\.Final_model/weight2/tusimple_lanenet.ckpt.zip
+
+2. yolo weight 파일 분할 압축 풀기
+
+   4\.Final_model/yoloweight
+
+```
+python3 final.py --video [영상 경로]
+```
+
+
+
+
 
 
 
