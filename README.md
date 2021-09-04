@@ -8,7 +8,7 @@
 
 ## 주제선정 및 배경
 
-이번 프로젝트에서는 카메라로 들어온 영상 정보를 활용하여 Object Detection을 하는게 최우선 목표이다. 다양한 모델들을 통해 차량과 차선등의 주변 환경 detection을 해보고 정확도가 가장 높은 model을 선정한다. 이후, 최종 model 선정 후 강화학습을 통해 추가적으로 model을 향상시킨 후 라즈베리파이를 통해 명령어를 전달한다. 
+이번 프로젝트에서는 카메라로 들어온 영상 정보를 활용하여 Object Detection, segmentation으로 차량과 차선등의 주변 환경 detection을 한다. 차량 주변 환경 정보를 통해서 앞차와의 거리, 차량의 steering 상태를 출력해주는 서비스이다. 또한 강화학습을 통해 차량의 steering과 acceleration을 제어하는 모델도 만들어본다.  
 
 
 
@@ -38,7 +38,7 @@
 
       
 
-   2. bounding box를 활용한 신호등 색깔 검출
+   2. bounding box와 HSV 변환을 활용한 신호등 색깔 검출
 
       ![image-20201228173249710](README.assets/image-20201228173249710.png)
 
@@ -46,7 +46,7 @@
 
 2. YOLO tracking
 
-   1. bounding box 크기를 활용한 차량 속도 표시 
+   1. bounding box 크기를 활용한 차량 속도 표시 ( 작아지면(멀어짐) 파란색, 커지면(가까워짐) 빨간색 ) 
 
       ![yolotrackinh](README.assets/yolotracking.gif)
 
@@ -56,7 +56,9 @@
 
       ![lanenet](README.assets/lanenet.gif)
 
-4. YOLO v3 + LANENET
+4. YOLO v3 + LANENET ( 최종 서비스 구현 )
+
+   ![image-20210904174700397](README.assets/image-20210904174700397.png)
 
    1. 고속도로
 
@@ -66,7 +68,7 @@
 
          ![city](README.assets/lanenet_yolo1.gif)
 
-1. reinforce learning
+5. reinforce learning
 
    1. epicode 400
 
@@ -130,14 +132,10 @@ python3 final.py --video [영상 경로]
 
 1. YOLO tracking과 LANENET을 함께 활용하지 못하였다. 
 2. 강화학습을 블랙박스 영상에 적용하지 못하였다. 
-3. 시뮬레이션을 통해 다양한 상황에 적용해보지 못했다.
+3. 시뮬레이션을 통해 다양한 상황(밤,비오는날 등)에 적용해보지 못했다.
 
 ### 추후 적용해볼 내용
 
 1. 실시간 객체 인식과 차선 인식
 2. 실시간 검출 모델을 라즈베리 파이나 기타 소형 컴퓨터에 적용 후 FPS 확인
 3. LANENET과 YOLO의 객체 검출을 바탕으로 강화 학습을 진행 후 차량 제어
-
-
-
-=> 한컴아카데미 자율주행 SW 전문가 과정 수강 중....
