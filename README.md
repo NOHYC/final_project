@@ -64,9 +64,9 @@
 
       ![high](README.assets/lanenet_yolo2.gif)
 
-      2. 도심
+   2. 도심
 
-         ![city](README.assets/lanenet_yolo1.gif)
+      ![city](README.assets/lanenet_yolo1.gif)
 
 5. reinforce learning
 
