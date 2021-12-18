@@ -1,4 +1,4 @@
-#  블랙 박스 영상을 활용한 운전 보조 서비스 (파이널 프로젝트)
+#  블랙 박스 영상에 Object detection과 Segmentation 적용 프로젝트
 
 ### 팀명 : Varchar(5)
 
