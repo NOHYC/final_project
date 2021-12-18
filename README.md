@@ -8,7 +8,7 @@
 
 ## 주제선정 및 배경
 
-이번 프로젝트에서는 카메라로 들어온 영상 정보를 활용하여 Object Detection, segmentation으로 차량과 차선등의 주변 환경 detection을 한다. 차량 주변 환경 정보를 통해서 앞차와의 거리, 차량의 steering 상태를 출력해주는 서비스이다. 또한 강화학습을 통해 차량의 steering과 acceleration을 제어하는 모델도 만들어본다.  
+카메라로 들어온 영상 정보를 활용하여 Object Detection, segmentation으로 차량과 차선등의 주변 환경 detection을 한다.
 
 
 
@@ -56,9 +56,9 @@
 
       ![lanenet](README.assets/lanenet.gif)
 
-4. YOLO v3 + LANENET ( 최종 서비스 구현 )
+4. YOLO v3 + LANENET 
 
-   ![image-20210904174700397](README.assets/image-20210904174700397.png)
+   
 
    1. 고속도로
 
@@ -122,17 +122,6 @@ loguru
 python3 final.py --video [영상 경로]
 ```
 
-
-
-
-
-
-
-### 현재 프로젝트에서 아쉬운 점
-
-1. YOLO tracking과 LANENET을 함께 활용하지 못하였다. 
-2. 강화학습을 블랙박스 영상에 적용하지 못하였다. 
-3. 시뮬레이션을 통해 다양한 상황(밤,비오는날 등)에 적용해보지 못했다.
 
 ### 추후 적용해볼 내용
 
