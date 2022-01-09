@@ -21,7 +21,7 @@
    1. LANENET
 3. reinforce learning : 정성훈
 4. object detection , lane detection : 홍세준
-
+5. tensorRT : 노용철
 
 
 ### 결과의 유용성
@@ -58,8 +58,6 @@
 
 4. YOLO v3 + LANENET 
 
-   
-
    1. 고속도로
 
       ![high](README.assets/lanenet_yolo2.gif)
@@ -68,7 +66,17 @@
 
       ![city](README.assets/lanenet_yolo1.gif)
 
-5. reinforce learning
+5. YOLO v4 + LANENET 
+
+   1. 고속도로
+
+      ![high](README.assets/yl1.gif)
+
+   2. 도심
+
+      ![city](README.assets/yl2.gif)
+
+6. reinforce learning
 
    1. epicode 400
 
@@ -122,9 +130,25 @@ loguru
 python3 final.py --video [영상 경로]
 ```
 
+3. New YOLO v4 + LANENET
+   RTX 2080 ti
+   fps : 30
+   using trt docker (docker pull nvcr.io/nvidia/tensorrt:20.06-py3)
 
-### 추후 적용해볼 내용
+   lanenet train link : https://github.com/NOHYC/lanenet_torch_onnx_trt
 
-1. 실시간 객체 인식과 차선 인식
-2. 실시간 검출 모델을 라즈베리 파이나 기타 소형 컴퓨터에 적용 후 FPS 확인
-3. LANENET과 YOLO의 객체 검출을 바탕으로 강화 학습을 진행 후 차량 제어
+   yolo v4 train link : https://github.com/AlexeyAB/darknet
+
+   convert code link : https://github.com/Tianxiaomo/pytorch-YOLOv4
+
+   recommenad darknet->ONNX->TensorRT
+
+   **inference**
+
+   **python3 demo_trt.py <tensorRT_engine_file_yolo> <tensorRT_engine_file_lanenet> <input_image> <input_H> <input_W>**
+   directory data [ tensorRT_engine_file_yolo, tensorRT_engine_file_lanenet, cfgFile, namesFile, videoFile ]
+   example
+   ```
+   python3 demo_trt.py yolov4_1_3_512_512_static.trt /Lanenet.trt /video.mp4 512 512 /classes.names 3 /yolo_lane.mp4 
+   ```
+
