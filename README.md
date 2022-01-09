@@ -131,12 +131,16 @@ python3 final.py --video [영상 경로]
 ```
 
 3. New YOLO v4 + LANENET
+
    RTX 2080 ti
+  
    fps : 30
+   
    using trt docker (docker pull nvcr.io/nvidia/tensorrt:20.06-py3)
+   
 
    lanenet train link : https://github.com/NOHYC/lanenet_torch_onnx_trt
-
+   
    yolo v4 train link : https://github.com/AlexeyAB/darknet
 
    convert code link : https://github.com/Tianxiaomo/pytorch-YOLOv4
@@ -146,8 +150,11 @@ python3 final.py --video [영상 경로]
    **inference**
 
    **python3 demo_trt.py <tensorRT_engine_file_yolo> <tensorRT_engine_file_lanenet> <input_image> <input_H> <input_W>**
+   
    directory data [ tensorRT_engine_file_yolo, tensorRT_engine_file_lanenet, cfgFile, namesFile, videoFile ]
+   
    example
+   
    ```
    python3 demo_trt.py yolov4_1_3_512_512_static.trt /Lanenet.trt /video.mp4 512 512 /classes.names 3 /yolo_lane.mp4 
    ```
